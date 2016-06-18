@@ -1,0 +1,29 @@
+PRINCIPAL
+-----------------------
+tamanho da letra 18
+tipo old times...
+-------------------------
+CONVERSAS
+---------------------
+tamanho 10
+tipo high tower
+---------------------
+BUTTONS
+--------------------
+font=calibri
+bold=true
+size=24
+color=red
+text shadow=true
+distance to text=1
+color=black
+size h=20
+size v=8
+style=rect box
+back color=pyramid gradient
+top=black
+center=white
+border=true
+size=2
+color=white
+
