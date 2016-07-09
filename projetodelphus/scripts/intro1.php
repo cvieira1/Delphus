@@ -15,7 +15,7 @@
              ?>
             <script>
                     function changebk(){
-                     document.body.background="../bkground/Rosehouse.jpg";
+                     document.body.background="../bkground/Rosehouse2h.jpg";
                      hide(a,b,'follow');
                      hide(a,b,'sent_4');
                      show(a,b,'sent_5');
