@@ -7,21 +7,24 @@
                             window.location.href="delphus_principal.php"
                          }
                          function verify(password,copypassword,name,nickname,email,country,sex){
-                           x=0
-                           y=0
+                           x=0;
                            if(document.all.name.value != "" && document.all.nickname.value != "" && document.all.email.value != "" && document.all.country.value != "" && document.all.sex.value != "" && document.all.password.value != "" && document.all.copypassword.value != ""){
-                           x = x + 1
+                             x = 1;
                            }else{
-                           alert('Complete all the informations.') 
-                            }
-                           
-                           if(x == 1 && copypassword.value == password.value){
-                           alert('Everything is fine,you can start.')
-                           document.all.button.style.visibility = "visible"
-                           }else{
-                           alert('Confirm your password again.');
+                             alert('Complete all the informations.'); 
                            }
-                           }    
+                           if(x == 1 && (document.all.email.value.indexOf("@") == -1 || document.all.email.value.indexOf(".") == -1)) {
+                             alert('E-mail incorreto');
+                           }else if(x == 1 && (document.all.email.value.indexOf("@") != -1 || document.all.email.value.indexOf(".") != -1) ){
+                             y = 1;
+                           }
+                           if(x == 1 && y == 1 && copypassword.value == password.value){
+                              alert('Everything is fine,you can start.');
+                              document.all.button.style.visibility = "visible";
+                           }else if(x == 1 && y == 1 && copypassword.value != password.value){
+                              alert('Confirm your password again.');
+                           }
+                          }   
             </script>
             <style>
                    .button{
@@ -57,10 +60,10 @@
             <input type="radio" name="sex" value="Female">Female
             </h2>
             <h2>Password:
-            <input type="text" name="password" size=30>
+            <input type="password" name="password" size=30>
             </h2>
             <h2>Confirm Password:
-            <input type="text" name="copypassword" size=30>
+            <input type="password" name="copypassword" size=30>
             </h2>
             <div id="button" style="visibility:hidden"> 
             <input type="image" src="../buttons/button_6.png">
