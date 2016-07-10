@@ -22,27 +22,37 @@
             <Center>
             <table style="width:100%; height:100%">
                    <tr>
-                        <th colspan="2"></th>
-                        <th>Descrição</th>
+                        <th colspan="6"></th>
+                        <th>Description</th>
                    </tr>
-                       <td colspan="2"><a href="">Head</a></td>
-                   </tr>
-                   <tr>
-                       <td><a href="">Arms</a></td>
-                       <td><a href="">Weapon</a></td> 
+                       <td colspan="6"><a href="">Head</a></td>
                    </tr>
                    <tr>
-                       <td colspan="2"><a href="">Body</a></td>
+                       <td colspan="3"><a href="">Arms</a></td>
+                       <td colspan="3"><a href="">Weapon</a></td> 
                    </tr>
                    <tr>
-                       <td colspan="2"><a href="">Legs</a></td>
+                       <td colspan="6"><a href="">Body</a></td>
                    </tr>
                    <tr>
-                       <td colspan="2"></td>
-                       <td rowspan="2"><b>PROXIMO</b></td>
+                       <td colspan="6"><a href="">Legs</a></td>
                    </tr>
                    <tr>
-                       <td colspan="2"></td>
+                       <td><img src="../extra_images/botas.jpg"></td>
+                       <td><img src="../extra_images/botas.jpg"></td>
+                       <td><img src="../extra_images/botas.jpg"></td>
+                       <td><img src="../extra_images/botas.jpg"></td>
+                       <td><img src="../extra_images/botas.jpg"></td>
+                       <td><img src="../extra_images/botas.jpg"></td>
+                       <td rowspan="2"><b><a href="">PROXIMO</a></b></td>
+                   </tr>
+                   <tr>
+                       <td><img src="../extra_images/botas.jpg"></td>
+                       <td><img src="../extra_images/botas.jpg"></td>
+                       <td><img src="../extra_images/botas.jpg"></td>
+                       <td><img src="../extra_images/botas.jpg"></td>
+                       <td><img src="../extra_images/botas.jpg"></td>
+                       <td><img src="../extra_images/botas.jpg"></td>
                    </tr>
              </table> 
              </center>
