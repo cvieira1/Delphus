@@ -1,5 +1,8 @@
 <html>
       <head>
+            <?php
+                 session_start();
+                 ?>
             <script>
             </script>
             <style>

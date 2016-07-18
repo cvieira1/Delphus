@@ -17,19 +17,19 @@
                  $dextery=$_SESSION["dextery"];
                  $carism=$_SESSION["carism"];
                  echo "<center><h1><font color=white>LEVEL:".$level."(exp:0 de 500)</h1></center>";
-                 echo "<h1 align=right><font color=yellow>GoldCoins:".$goldcoins."</h1>";
+                 echo "<h1><font color=yellow><img src='../extra_images/gold_coin.png'>:".$goldcoins."</h1>";
                  echo "<h1 align=right><font color=grey>SilverCoins:".$silvercoins."</h1>";
                  echo "<h1 align=right><font color=brown>CopperCoins:".$coppercoins."</h1>";
                  echo "<h1 align=left><font color=white>Life:".$life."
-                 <input type=\"button\" value=\"+\" enabled=false><input type=\"button\" value=\"-\"></h1>";
+                 <input type=\"button\" value=\"+\" disabled=true><input type=\"button\" value=\"-\" disabled=true></h1>";
                  echo "<h1 align=left><font color=white>Defence:".$defence."
-                 <input type=\"button\" value=\"+\" enabled=false><input type=\"button\" value=\"-\"></h1>";
+                 <input type=\"button\" value=\"+\" disabled=true><input type=\"button\" value=\"-\" disabled=true></h1>";
                  echo "<h1 align=left><font color=white>Attack:".$attack."
-                 <input type=\"button\" value=\"+\" enabled=false><input type=\"button\" value=\"-\"></h1>";
+                 <input type=\"button\" value=\"+\" disabled=true><input type=\"button\" value=\"-\" disabled=true></h1>";
                  echo "<h1 align=left><font color=white>Dextery:".$dextery."
-                 <input type=\"button\" value=\"+\" enabled=false><input type=\"button\" value=\"-\"></h1>";
+                 <input type=\"button\" value=\"+\" disabled=true><input type=\"button\" value=\"-\" disabled=true></h1>";
                  echo "<h1 align=left><font color=white>Carism:".$carism."
-                 <input type=\"button\" value=\"+\" enabled=false><input type=\"button\" value=\"-\"></h1>";
+                 <input type=\"button\" value=\"+\" disabled=true><input type=\"button\" value=\"-\" disabled=true></h1>";
             ?>
             <div id="man1" style="position:absolute; top:125; left:550; visibility:hidden">
             <img src="../chars/Man1.jpg">
