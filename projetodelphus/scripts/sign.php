@@ -9,9 +9,11 @@
                  $strSQL="INSERT INTO login(name,nickname,email,country,sex,password,GoldCoins,SilverCoins,CopperCoins) VALUES ('".$_POST["name"]."','".$_POST["nickname"]."','".$_POST["email"]."','".$_POST["country"]."','".$_POST["sex"]."','".$_POST["password"]."','0','0','0')";
                  $strSQL2="INSERT INTO inventory(head,arms,weapon,body,legs) VALUES ('0','0','0','0','0')";
                  $strSQL3="INSERT INTO status(life,defence,attack,dextery,carism) VALUES('100','100','100','100','100')";
+                 $strSQL4="INSERT INTO logs(file) VALUES('".file_get_contents("userlog.txt")."')";
                  $rs=mysqli_query($accounts,$strSQL);
                  $rs2=mysqli_query($accounts,$strSQL2);
                  $rs3=mysqli_query($accounts,$strSQL3);
+                 $rs4=mysqli_query($accounts,$strSQL4);
                  $nickname = $_POST["nickname"];
                  $password = $_POST["password"];
                  $_SESSION["nickname"] = $nickname;
@@ -21,7 +23,8 @@
                  $_SESSION["defence"] = 100;
                  $_SESSION["attack"] = 100;
                  $_SESSION["dextery"] = 100;
-                 $_SESSION["carism"] = 100;     
+                 $_SESSION["carism"] = 100;
+                 $_SESSION["id"] = mysqli_insert_id($accounts);     
                  mysqli_close($accounts);
              ?>
             <script>

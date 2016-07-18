@@ -18,6 +18,7 @@
                    $row=mysqli_fetch_array($rs);
                    $row2=mysqli_fetch_array($rs2);
                    if($row['id']==$row2['id']){
+                   $_SESSION["id"] = $row['id'];
                    $_SESSION["nickname"] = $row['nickname'];
                    $_SESSION["password"] = $row['password'];
                    $_SESSION["goldcoins"] = $row['GoldCoins'];
