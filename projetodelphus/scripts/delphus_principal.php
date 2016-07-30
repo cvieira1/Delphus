@@ -5,7 +5,6 @@
             <meta name="keywords" content="delphus online,pirate game,delphus">
             <meta name="description" content="Be a Pirate!Access now and make your dreams come real!">
             <script>
-      
                function login(){
                window.location.href="delphus_login.php"
               }
