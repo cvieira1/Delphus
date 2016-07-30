@@ -30,6 +30,7 @@
                    $_SESSION["attack"] = $row2['attack'];
                    $_SESSION["dextery"] = $row2['dextery'];
                    $_SESSION["carism"] = $row2['carism'];
+                   $_SESSION["loadK"]=1;
                    echo "<script>window.location.href='principal.php'</script>";
                    mysqli_close($accounts);
                    }else{

@@ -25,7 +25,8 @@
                  $_SESSION["attack"] = 100;
                  $_SESSION["dextery"] = 100;
                  $_SESSION["carism"] = 100;
-                 $_SESSION["id"] = mysqli_insert_id($accounts);     
+                 $_SESSION["id"] = mysqli_insert_id($accounts);
+                 $_SESSION["loadK"]=1;     
                  mysqli_close($accounts);
              ?>
             <script>
