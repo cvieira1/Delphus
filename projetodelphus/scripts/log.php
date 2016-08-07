@@ -1,6 +1,9 @@
 <?php
      session_start();
      error_reporting(0);
+     $accounts=mysqli_connect("localhost","root","")or die(mysqli_error());
+     mysqli_select_db($accounts,"delphusdatabase")or die(mysqli_error());
+     $id=$_SESSION["id"];
      if($_POST["condition"]){        
         if($_POST["saveK"]){
          if($_SESSION["loadK"]==1){
@@ -40,15 +43,43 @@
          }
         }
         if($_POST["removeK"]){ 
-         $strSQL2= "UPDATE logs SET file1='".file_get_contents("nothing.txt")."' WHERE id='".$_SESSION["id"]."' ";
-         $strSQL3= "UPDATE logs SET date1='".file_get_contents("nothing.txt")."' WHERE id='".$_SESSION["id"]."' ";
-         $rs2=mysqli_query($accounts,$strSQL2);
-         $rs3=mysqli_query($accounts,$strSQL3);    
+         if($_SESSION["loadK"]==1){
+           $strSQL2= "UPDATE logs SET file1='".file_get_contents("nothing.txt")."' WHERE id='".$_SESSION["id"]."' ";
+           $strSQL3= "UPDATE logs SET date1='".file_get_contents("nothing.txt")."' WHERE id='".$_SESSION["id"]."' ";
+           $rs2=mysqli_query($accounts,$strSQL2);
+           $rs3=mysqli_query($accounts,$strSQL3);
+           $condition=1;
+         }
+         if($_SESSION["loadK"]==2){
+           $strSQL2= "UPDATE logs SET file2='".file_get_contents("nothing.txt")."' WHERE id='".$_SESSION["id"]."' ";
+           $strSQL3= "UPDATE logs SET date2='".file_get_contents("nothing.txt")."' WHERE id='".$_SESSION["id"]."' ";
+           $rs2=mysqli_query($accounts,$strSQL2);
+           $rs3=mysqli_query($accounts,$strSQL3);
+           $condition=2;
+         }
+         if($_SESSION["loadK"]==3){
+           $strSQL2= "UPDATE logs SET file3='".file_get_contents("nothing.txt")."' WHERE id='".$_SESSION["id"]."' ";
+           $strSQL3= "UPDATE logs SET date3='".file_get_contents("nothing.txt")."' WHERE id='".$_SESSION["id"]."' ";
+           $rs2=mysqli_query($accounts,$strSQL2);
+           $rs3=mysqli_query($accounts,$strSQL3);
+           $condition=3;
+         }
+         if($_SESSION["loadK"]==4){
+           $strSQL2= "UPDATE logs SET file4='".file_get_contents("nothing.txt")."' WHERE id='".$_SESSION["id"]."' ";
+           $strSQL3= "UPDATE logs SET date4='".file_get_contents("nothing.txt")."' WHERE id='".$_SESSION["id"]."' ";
+           $rs2=mysqli_query($accounts,$strSQL2);
+           $rs3=mysqli_query($accounts,$strSQL3);
+           $condition=4;
+         }
+         if($_SESSION["loadK"]==5){
+           $strSQL2= "UPDATE logs SET file5='".file_get_contents("nothing.txt")."' WHERE id='".$_SESSION["id"]."' ";
+           $strSQL3= "UPDATE logs SET date5='".file_get_contents("nothing.txt")."' WHERE id='".$_SESSION["id"]."' ";
+           $rs2=mysqli_query($accounts,$strSQL2);
+           $rs3=mysqli_query($accounts,$strSQL3);
+           $condition=5;
+         }    
         }
        }
-       $accounts=mysqli_connect("localhost","root","")or die(mysqli_error());
-       mysqli_select_db($accounts,"delphusdatabase")or die(mysqli_error());
-       $id=$_SESSION["id"];
        $strSQL="SELECT * FROM logs WHERE id='$id'";
        $rs=mysqli_query($accounts,$strSQL);
        $row=mysqli_fetch_array($rs);
@@ -66,23 +97,43 @@
        $date = $_SESSION["date1"];
        if($condition==1){
          $file = $_SESSION["file1"];
-         $date = $_SESSION["date1"];
+         if($_SESSION["date1"]==""){
+            $date = date("d/m/y H:i");
+         }else{
+            $date = $_SESSION["date1"];
+         }
        } 
        if($condition==2){
          $file = $_SESSION["file2"];
-         $date = $_SESSION["date2"];
+         if($_SESSION["date2"]==""){
+            $date = date("d/m/y H:i");
+         }else{
+            $date = $_SESSION["date2"];
+         }
        } 
        if($condition==3){
          $file = $_SESSION["file3"];
-         $date = $_SESSION["date3"];
+         if($_SESSION["date3"]==""){
+           $date = date("d/m/y H:i");
+         }else{
+           $date = $_SESSION["date3"];
+         }
        } 
        if($condition==4){
          $file = $_SESSION["file4"];
-         $date = $_SESSION["date4"];
+         if($_SESSION["date4"]==""){
+           $date = date("d/m/y H:i");
+         }else{
+           $date = $_SESSION["date4"];
+         }
        } 
        if($condition==5){
          $file = $_SESSION["file5"];
-         $date = $_SESSION["date5"];
+         if($_SESSION["date5"]==""){
+           $date = date("d/m/y H:i");
+         }else{
+           $date = $_SESSION["date5"];
+         }
        } 
      ?>            
 <html>
@@ -210,14 +261,19 @@
                    .mylogtext{
                           font:22pt "Arial";
                           width:800px;
-                          height:450px;
-                          text-align:center;
+                          height:425px;
+                          resize:none;
+                          overflow:hidden;
+                          border-width:0;
                          }
                    .mylogtime{
                           font:22pt "Arial";
                           width:800px;
                           height:50px;
-                          text-align:center;
+                          text-align:left;
+                          resize:none;
+                          overflow:hidden;
+                          border-width:0;
                          }
                    .mylogtime2{
                           font:14pt "Arial";
@@ -227,7 +283,7 @@
                          }
             </style>
       </head>
-      <body bgcolor=black>
+      <body background="../extra_images/table.jpg">
             <?php
                 if($_POST["condition"]){
                    if($_POST["loadK"]==1){
@@ -280,12 +336,12 @@
                ?>            
             <form name="form1" method="post" action="<?php $PHP_SELF ?>">
               <center>
-              <textarea name="texttime" cols="60" rows="2" id="texttime" class="mylogtime">
+              <textarea wrap="off" style="background-image:url('../extra_images/theletterdate.jpg')" name="texttime" cols="60" rows="2" id="texttime" class="mylogtime" maxlength="14" scroll=no>
               <?php
                 echo $date;
               ?>
               </textarea>
-              <textarea name="text" cols="60" rows="10" id="texto" class="mylogtext">
+              <textarea wrap="off" style="background-image:url('../extra_images/theletter.jpg')" name="text" cols="60" rows="10" id="texto" class="mylogtext" maxlength="600" scroll=no>
               <?php
                 echo $file;
               ?>
@@ -317,6 +373,9 @@
                    <br>
                    <br>
                    <input type="button" name='file5' id='file5' value="<?php echo $_SESSION["date5"] ?>" class="mylogtime2" onclick="selection()" onmouseover="border5()" onmouseout="normal()">
+              </div>
+              <div style="position:absolute; left:50; top:50">
+                   <img src="../extra_images/pena05trns.png">
               </div>
             </form>
             <?php
