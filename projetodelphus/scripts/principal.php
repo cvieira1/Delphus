@@ -5,7 +5,7 @@
       </head>
       <frameset rows=20%,80% frameborder=0>
                                            <frame src="title.php">       
-                                           <frameset cols=*,2* frameborder=0>
+                                           <frameset cols=20%,80% frameborder=0>
                                                                             <frame src="menu.php">
                                                                             <frame src="mapa.php">
                                            </frameset>
