@@ -13,29 +13,13 @@
                    echo "<script>alert('Não existe')</script>";
                    echo "<script>window.location.href='delphus_login.php'</script>";
                  }else{
-                   $strSQL2="SELECT*FROM status";
-                   $rs2=mysqli_query($accounts,$strSQL2);                   
                    $row=mysqli_fetch_array($rs);
-                   $row2=mysqli_fetch_array($rs2);
-                   if($row['id']==$row2['id']){
                    $_SESSION["id"] = $row['id'];
                    $_SESSION["nickname"] = $row['nickname'];
-                   $_SESSION["password"] = $row['password'];
-                   $_SESSION["goldcoins"] = $row['GoldCoins'];
-                   $_SESSION["silvercoins"] = $row['SilverCoins'];
-                   $_SESSION["coppercoins"] = $row['CopperCoins'];
-                   $_SESSION["level"] = $row2['level'];
-                   $_SESSION["life"] = $row2['life'];
-                   $_SESSION["defence"] = $row2['defence'];
-                   $_SESSION["attack"] = $row2['attack'];
-                   $_SESSION["dextery"] = $row2['dextery'];
-                   $_SESSION["carism"] = $row2['carism'];
-                   $_SESSION["loadK"]=1;
+                   $_SESSION["model"]= $row['Model'];
+                   $_SESSION["loadK"] = 1;
                    echo "<script>window.location.href='principal.php'</script>";
                    mysqli_close($accounts);
-                   }else{
-                   mysqli_close($accounts);
-                   }
                  }
              ?>
       </head>

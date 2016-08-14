@@ -4,7 +4,7 @@
       </head>
       <body>
             <center>
-                    <h1>WELCOME TO DELPHUS</h1>
+                    <h1><img src="../extra_images/piratesword1N.jpg" align=right>WELCOME TO DELPHUS<img src="../extra_images/piratesword2N.jpg" align=left></h1>
             </center>
       </body>
 </html>

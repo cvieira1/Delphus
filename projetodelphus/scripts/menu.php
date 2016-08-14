@@ -4,8 +4,13 @@
             <base target="_top">
       </head>
       <body>
+            <div style="position:absolute; top:50">
             <ol>
                 <li><a href="userlog.php"><img src="../buttons/button.png"></a>
+                <br>
+                <li><a href="missions.php"><img src="../buttons/button_16.png"></a>
+                <br>
+                <li><a href="friends.php"><img src="../buttons/button_17.png"></a>
                 <br>
                 <li><a href="globallog.php"><img src="../buttons/button_2.png"></a>
                 <br>
@@ -13,5 +18,6 @@
                 <br>
                 <li><a href="options.php"><img src="../buttons/button_3.png"></a>
             </ol>
+            </div>
       </body>
 </html>

@@ -4,6 +4,30 @@
                  $accounts=mysqli_connect("localhost","root","")or die(mysqli_error());
                  mysqli_select_db($accounts,"delphusdatabase")or die(mysqli_error());
                  $id=$_SESSION["id"];
+                 if($_SESSION["model"]==1){
+                  include("clothes1.php");
+                  echo "<script> var x=1;</script>";
+                 }
+                 if($_SESSION["model"]==2){
+                  include("clothes2.php");
+                  echo "<script> var x=2;</script>";
+                 }
+                 if($_SESSION["model"]==3){
+                  include("clothes3.php");
+                  echo "<script> var x=3;</script>";
+                 }
+                 if($_SESSION["model"]==4){
+                  include("clothes4.php");
+                  echo "<script> var x=4;</script>";
+                 }
+                 if($_SESSION["model"]==5){
+                  include("clothes5.php");
+                  echo "<script> var x=5;</script>";
+                 }
+                 if($_SESSION["model"]==6){
+                  include("clothes6.php");
+                  echo "<script> var x=6;</script>";
+                 }
                  $strSQL="SELECT * FROM inventory WHERE id='$id'";
                  $rs=mysqli_query($accounts,$strSQL);
                  $row=mysqli_fetch_array($rs);
@@ -19,10 +43,7 @@
                  $_SESSION["img10"]=$row["img10h"];
                  $_SESSION["img11"]=$row["img11h"];
                  $_SESSION["img12"]=$row["img12h"];
-                 if($_POST["condition"]){
-                  echo "lalala";
                   if($_POST["armsh"]=="1"){
-                   echo "braço";
                    $_SESSION["img1"]=$row["img1a"];
                    $_SESSION["img2"]=$row["img2a"];
                    $_SESSION["img3"]=$row["img3a"];
@@ -37,7 +58,6 @@
                    $_SESSION["img12"]=$row["img12a"];
                   }
                   if($_POST["weaponh"]=="1"){
-                   echo "arma";
                    $_SESSION["img1"]=$row["img1w"];
                    $_SESSION["img2"]=$row["img2w"];
                    $_SESSION["img3"]=$row["img3w"];
@@ -52,7 +72,6 @@
                    $_SESSION["img12"]=$row["img12w"];
                   }
                   if($_POST["bodyh"]=="1"){
-                   echo "corpo";
                    $_SESSION["img1"]=$row["img1b"];
                    $_SESSION["img2"]=$row["img2b"];
                    $_SESSION["img3"]=$row["img3b"];
@@ -67,7 +86,6 @@
                    $_SESSION["img12"]=$row["img12b"];
                   }
                   if($_POST["legsh"]==1){
-                   echo "perna";
                    $_SESSION["img1"]=$row["img1l"];
                    $_SESSION["img2"]=$row["img2l"];
                    $_SESSION["img3"]=$row["img3l"];
@@ -81,13 +99,12 @@
                    $_SESSION["img11"]=$row["img11l"];
                    $_SESSION["img12"]=$row["img12l"];
                   }
-                 }
                  ?>
 <html>
       <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
             <script>
                      function headf2(){
-                       alert('lala');
                        document.all.form1.armsh.value="0";
                        document.all.form1.weaponh.value="0";
                        document.all.form1.bodyh.value="0";
@@ -95,7 +112,6 @@
                        document.all.form1.submit();
                      }
                      function armsf2(){
-                       alert('lala');
                        document.all.form1.armsh.value="1";
                        document.all.form1.weaponh.value="0";
                        document.all.form1.bodyh.value="0";
@@ -103,15 +119,13 @@
                        document.all.form1.submit();
                      }
                      function weaponf2(){
-                       alert('lala');
                        document.all.form1.armsh.value="0";
                        document.all.form1.weaponh.value="1";
                        document.all.form1.bodyh.value="0";
                        document.all.form1.legsh.value="0";
-                       document.getElementById("form1id").submit();
+                       document.all.form1.submit();
                      }
                      function bodyf2(){
-                       alert('lala');
                        document.all.form1.armsh.value="0";
                        document.all.form1.weaponh.value="0";
                        document.all.form1.bodyh.value="1";
@@ -119,12 +133,455 @@
                        document.all.form1.submit();
                      }
                      function legsf2(){
-                       alert('lala');
                        document.all.form1.armsh.value="0";
                        document.all.form1.weaponh.value="0";
                        document.all.form1.bodyh.value="0";
                        document.all.form1.legsh.value="1";
                        document.all.form1.submit();
+                     }
+                     if(x==1){
+                     $(document).ready(function(){
+                       $("div.img1").mouseover(function(){
+                        $.ajax({ url:'clothes1.php',
+                                 data:{action:'1'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     $(document).ready(function(){
+                       $("div.img2").mouseover(function(){
+                        $.ajax({ url:'clothes1.php',
+                                 data:{action:'2'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     $(document).ready(function(){
+                       $("div.img3").mouseover(function(){
+                        $.ajax({ url:'clothes1.php',
+                                 data:{action:'3'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     $(document).ready(function(){
+                       $("div.img4").mouseover(function(){
+                        $.ajax({ url:'clothes1.php',
+                                 data:{action:'4'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     $(document).ready(function(){
+                       $("div.img5").mouseover(function(){
+                        $.ajax({ url:'clothes1.php',
+                                 data:{action:'5'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     $(document).ready(function(){
+                       $("div.img6").mouseover(function(){
+                        $.ajax({ url:'clothes1.php',
+                                 data:{action:'6'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     }
+                     if(x==2){
+                     $(document).ready(function(){
+                       $("div.img1").mouseover(function(){
+                        $.ajax({ url:'clothes2.php',
+                                 data:{action:'1'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     $(document).ready(function(){
+                       $("div.img2").mouseover(function(){
+                        $.ajax({ url:'clothes2.php',
+                                 data:{action:'2'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     $(document).ready(function(){
+                       $("div.img3").mouseover(function(){
+                        $.ajax({ url:'clothes2.php',
+                                 data:{action:'3'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     $(document).ready(function(){
+                       $("div.img4").mouseover(function(){
+                        $.ajax({ url:'clothes2.php',
+                                 data:{action:'4'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     $(document).ready(function(){
+                       $("div.img5").mouseover(function(){
+                        $.ajax({ url:'clothes2.php',
+                                 data:{action:'5'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     $(document).ready(function(){
+                       $("div.img6").mouseover(function(){
+                        $.ajax({ url:'clothes2.php',
+                                 data:{action:'6'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     }
+                     if(x==3){
+                     $(document).ready(function(){
+                       $("div.img1").mouseover(function(){
+                        $.ajax({ url:'clothes3.php',
+                                 data:{action:'1'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     $(document).ready(function(){
+                       $("div.img2").mouseover(function(){
+                        $.ajax({ url:'clothes3.php',
+                                 data:{action:'2'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     $(document).ready(function(){
+                       $("div.img3").mouseover(function(){
+                        $.ajax({ url:'clothes3.php',
+                                 data:{action:'3'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     $(document).ready(function(){
+                       $("div.img4").mouseover(function(){
+                        $.ajax({ url:'clothes3.php',
+                                 data:{action:'4'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     $(document).ready(function(){
+                       $("div.img5").mouseover(function(){
+                        $.ajax({ url:'clothes3.php',
+                                 data:{action:'5'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     $(document).ready(function(){
+                       $("div.img6").mouseover(function(){
+                        $.ajax({ url:'clothes3.php',
+                                 data:{action:'6'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     }
+                     if(x==4){
+                     $(document).ready(function(){
+                       $("div.img1").mouseover(function(){
+                        $.ajax({ url:'clothes4.php',
+                                 data:{action:'1'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     $(document).ready(function(){
+                       $("div.img2").mouseover(function(){
+                        $.ajax({ url:'clothes4.php',
+                                 data:{action:'2'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     $(document).ready(function(){
+                       $("div.img3").mouseover(function(){
+                        $.ajax({ url:'clothes4.php',
+                                 data:{action:'3'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     $(document).ready(function(){
+                       $("div.img4").mouseover(function(){
+                        $.ajax({ url:'clothes4.php',
+                                 data:{action:'4'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     $(document).ready(function(){
+                       $("div.img5").mouseover(function(){
+                        $.ajax({ url:'clothes4.php',
+                                 data:{action:'5'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     $(document).ready(function(){
+                       $("div.img6").mouseover(function(){
+                        $.ajax({ url:'clothes4.php',
+                                 data:{action:'6'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     }
+                     if(x==5){
+                     $(document).ready(function(){
+                       $("div.img1").mouseover(function(){
+                        $.ajax({ url:'clothes5.php',
+                                 data:{action:'1'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     $(document).ready(function(){
+                       $("div.img2").mouseover(function(){
+                        $.ajax({ url:'clothes5.php',
+                                 data:{action:'2'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     $(document).ready(function(){
+                       $("div.img3").mouseover(function(){
+                        $.ajax({ url:'clothes5.php',
+                                 data:{action:'3'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     $(document).ready(function(){
+                       $("div.img4").mouseover(function(){
+                        $.ajax({ url:'clothes5.php',
+                                 data:{action:'4'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     $(document).ready(function(){
+                       $("div.img5").mouseover(function(){
+                        $.ajax({ url:'clothes5.php',
+                                 data:{action:'5'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     $(document).ready(function(){
+                       $("div.img6").mouseover(function(){
+                        $.ajax({ url:'clothes5.php',
+                                 data:{action:'6'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     }
+                     if(x==6){
+                     $(document).ready(function(){
+                       $("div.img1").mouseover(function(){
+                        $.ajax({ url:'clothes6.php',
+                                 data:{action:'1'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     $(document).ready(function(){
+                       $("div.img2").mouseover(function(){
+                        $.ajax({ url:'clothes6.php',
+                                 data:{action:'2'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     $(document).ready(function(){
+                       $("div.img3").mouseover(function(){
+                        $.ajax({ url:'clothes6.php',
+                                 data:{action:'3'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     $(document).ready(function(){
+                       $("div.img4").mouseover(function(){
+                        $.ajax({ url:'clothes6.php',
+                                 data:{action:'4'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     $(document).ready(function(){
+                       $("div.img5").mouseover(function(){
+                        $.ajax({ url:'clothes6.php',
+                                 data:{action:'5'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
+                     $(document).ready(function(){
+                       $("div.img6").mouseover(function(){
+                        $.ajax({ url:'clothes6.php',
+                                 data:{action:'6'},
+                                 async:false,
+                                 type:'post',
+                                 success:function(description){
+                                           window.location.reload();
+                                          }
+                        });
+                       });
+                      });
                      }
             </script>
             <style>
@@ -152,34 +609,34 @@
                    </tr>
                    <tr>
                        <td colspan="6"><form><input type=button value="Head" onclick="headf2()"></form></td>
-                       <td rowspan="4"><?php echo $description; ?></td>
+                       <td rowspan="4"><?php echo $_SESSION["description"]; ?></td>
                    </tr>
                    <tr>
-                       <td colspan="3"><a href="" onclick="armsf2()">Arms</a></td>
-                       <td colspan="3"><a href="" onclick="weaponf2()">Weapon</a></td> 
+                       <td colspan="3"><form><input type=button value="Arms" onclick="armsf2()"></form></td>
+                       <td colspan="3"><form><input type=button value="Weapon" onclick="weaponf2()"></form></td> 
                    </tr>
                    <tr>
-                       <td colspan="6"><a href="" onclick="bodyf2()">Body</a></td>
+                       <td colspan="6"><form><input type=button value="Body" onclick="bodyf2()"></form></td>
                    </tr>
                    <tr>
-                       <td colspan="6"><a href="" onclick="legsf2()">Legs</a></td>
+                       <td colspan="6"><form><input type=button value="Legs" onclick="legsf2()"></form></td>
                    </tr>
                    <tr>
-                       <td><img src="<?php echo $_SESSION['img1']; ?>"/></td>
-                       <td><img src="<?php echo $_SESSION['img2']; ?>"/></td>
-                       <td><img src="<?php echo $_SESSION['img3']; ?>"/></td>
-                       <td><img src="<?php echo $_SESSION['img4']; ?>"/></td>
-                       <td><img src="<?php echo $_SESSION['img5']; ?>"/></td>
-                       <td><img src="<?php echo $_SESSION['img6']; ?>"/></td>
-                       <td rowspan="2"><b><a href="">PROXIMO</a></b></td>
+                       <td><div class="img1"><img src="<?php echo $_SESSION['img1']; ?>" onmouseover="descriptionf()"/></div></td>
+                       <td><div class="img2"><img src="<?php echo $_SESSION['img2']; ?>" onmouseover="description()"/></div></td>
+                       <td><div class="img3"><img src="<?php echo $_SESSION['img3']; ?>" onmouseover="description()"/></div></td>
+                       <td><div class="img4"><img src="<?php echo $_SESSION['img4']; ?>" onmouseover="description()"/></div></td>
+                       <td><div class="img5"><img src="<?php echo $_SESSION['img5']; ?>" onmouseover="description()"/></div></td>
+                       <td><div class="img6"><img src="<?php echo $_SESSION['img6']; ?>" onmouseover="description()"/></div></td>
+                       <td rowspan="2"><b><a href="">NEXT</a></b></td>
                    </tr>
                    <tr>
-                       <td><img src="<?php echo $_SESSION['img7']; ?>"/></td>
-                       <td><img src="<?php echo $_SESSION['img8']; ?>"/></td>
-                       <td><img src="<?php echo $_SESSION['img9']; ?>"/></td>
-                       <td><img src="<?php echo $_SESSION['img10']; ?>"/></td>
-                       <td><img src="<?php echo $_SESSION['img11']; ?>"/></td>
-                       <td><img src="<?php echo $_SESSION['img12']; ?>"/></td>
+                       <td><div class="img7"><img src="<?php echo $_SESSION['img7']; ?>"/></div></td>
+                       <td><div class="img8"><img src="<?php echo $_SESSION['img8']; ?>"/></div></td>
+                       <td><div class="img9"><img src="<?php echo $_SESSION['img9']; ?>"/></div></td>
+                       <td><div class="img10"><img src="<?php echo $_SESSION['img10']; ?>"/></div></td>
+                       <td><div class="img11"><img src="<?php echo $_SESSION['img11']; ?>"/></div></td>
+                       <td><div class="img12"><img src="<?php echo $_SESSION['img12']; ?>"/></div></td>
                    </tr>
              </table> 
              <form name="form1" id="form1id" method="post" action="<?php $PHP_SELF ?>">
@@ -189,7 +646,6 @@
                <input type=hidden name='weaponh' >
                <input type=hidden name='bodyh' >
                <input type=hidden name='legsh' >
-               <input type=submit >
              </form>
              <?php
                   error_reporting(E_ALL);

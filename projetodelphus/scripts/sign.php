@@ -7,9 +7,9 @@
                  $date = date("d/m/y H:i");
                  $accounts=mysqli_connect("localhost","root","")or die(mysqli_error());
                  mysqli_select_db($accounts,"delphusdatabase")or die(mysqli_error());
-                 $strSQL="INSERT INTO login(name,nickname,email,country,sex,password,GoldCoins,SilverCoins,CopperCoins) VALUES ('".$_POST["name"]."','".$_POST["nickname"]."','".$_POST["email"]."','".$_POST["country"]."','".$_POST["sex"]."','".$_POST["password"]."','0','0','0')";
+                 $strSQL="INSERT INTO login(name,nickname,email,country,sex,password) VALUES ('".$_POST["name"]."','".$_POST["nickname"]."','".$_POST["email"]."','".$_POST["country"]."','".$_POST["sex"]."','".$_POST["password"]."')";
                  $strSQL2="INSERT INTO inventory(head,arms,weapon,body,legs) VALUES ('0','0','0','0','0')";
-                 $strSQL3="INSERT INTO status(life,defence,attack,dextery,carism) VALUES('100','100','100','100','100')";
+                 $strSQL3="INSERT INTO status(level,life,defence,attack,dextery,carism,GoldCoins,SilverCoins,CopperCoins,points) VALUES('1','100','100','100','100','100','0','0','0','0')";
                  $strSQL4="INSERT INTO logs(file1,date1) VALUES('".file_get_contents("userlog.txt")."','$date')";
                  $rs=mysqli_query($accounts,$strSQL);
                  $rs2=mysqli_query($accounts,$strSQL2);
@@ -19,14 +19,8 @@
                  $password = $_POST["password"];
                  $_SESSION["nickname"] = $nickname;
                  $_SESSION["password"] = $password;
-                 $_SESSION["level"] = 1;
-                 $_SESSION["life"] = 100;
-                 $_SESSION["defence"] = 100;
-                 $_SESSION["attack"] = 100;
-                 $_SESSION["dextery"] = 100;
-                 $_SESSION["carism"] = 100;
                  $_SESSION["id"] = mysqli_insert_id($accounts);
-                 $_SESSION["loadK"]=1;     
+                 $_SESSION["loadK"]=1;
                  mysqli_close($accounts);
              ?>
             <script>
