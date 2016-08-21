@@ -34,7 +34,7 @@
             <a href="delphus_sign.php" onmouseover="putsentence2()" onmouseout="returnsentence1()"><img src="../buttons/button_4.png"></a>
             <a href="delphus_login.php" onmouseover="putsentence3()" onmouseout="returnsentence1()"><img src="../buttons/button_5.png"></a>
             </center>
-            <div style="position:absolute; top:375; left:400">
+            <div style="position:absolute; top:350; left:400">
             <image src="../chars/captain1.jpg">
             </div>
             <div id="sentence1" style="position:absolute; top:375; left:600">
