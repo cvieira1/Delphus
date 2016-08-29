@@ -33,4 +33,12 @@
           hide(a,b,'buttons1');
           show(a,b,'slum');
          }
+        function train(){
+          show(a,b,'question_train');
+          show(a,b,'buttons_train');
+         }
+        function deny_train(){
+          hide(a,b,'question_train');
+          hide(a,b,'buttons_train');
+         }
 </script>
