@@ -43,8 +43,8 @@
             <div id="seta1" style="position:absolute;left:900;top:100;visibility:hidden">
                  <img src="../extra_images/seta.png">
             </div>
-            <div id="slum" style="position:absolute;left:175;top:175;visibility:hidden">
-                 <img src="../chars/village_slum.png">
+            <div id="slum" style="position:absolute;left:275;top:175;visibility:hidden">
+                 <img src="../chars/villager1_trans.png" width=150 height=200 onclick="train()">
             </div>
             <div id="buttons1" style="position:absolute;top:350;left:650;visibility:visible">
                  <input type="button" value="Who are you?" onclick="answer1()">
@@ -55,6 +55,15 @@
                  <br>
                  <input type="button" value="Bye!!" onclick="normal()">
             </div>
+            <div id="question_train" style="position:absolute;left:325;top:75;visibility:hidden">
+                 <img src="../sentences/question_train.png">
+            </div>
+            <div id="buttons_train" style="position:absolute;left:425;top:225;visibility:hidden">
+                 <input type="button" value="Yes!" onclick="accept_train()">
+                 <br>
+                 <input type="button" value="No.." onclick="deny_train()">
+            </div>
+
             <?php
                  if($row["level"]==1 && $row["missions"]==0){
                   }
