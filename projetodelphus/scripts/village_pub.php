@@ -10,5 +10,11 @@
       </head>
       <body>
             <img src="../bkground/pub1.png" class="bg">
+            <div id="drunk1_pub" style="position:absolute;top:120;left:380;visibility:visible">
+                 <img src="../chars/drunk1_pub.png">
+            </div>
+            <div id="drunk2_pub" style="position:absolute;top:170;left:580;visibility:visible">
+                 <img src="../chars/drunk2_pub.png">
+            </div>
       </body>
 </html>
