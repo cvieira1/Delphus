@@ -22,7 +22,6 @@
       <body>
             <map name="map">
                       <area shape="rect" coords="1000,50,1150,350" href="village_pub.php">
-                      <area shape="rect" coords="0,0,100,100" onclick="teste()">
             </map>
             <img src="../bkground/VillageN2.jpg" class="bg" usemap="#map">
             <div id="villager1" style="position:absolute;top:150;left:300;visibility:visible">
