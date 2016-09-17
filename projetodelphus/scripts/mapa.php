@@ -1,7 +1,7 @@
 <html>
       <head>
             <link rel="stylesheet" type="text/css" href="delphus_css1.css">
-           <base target="_top">
+            <base target="_top">
       </head>
       <body>
             <map name = "map">
@@ -15,7 +15,7 @@
             <img src="../skullmap.jpg">
             </div>
             <div style="position:absolute;left:800;top:400">
-            <a href="delphus_principal.php"><img src="../buttons/button_19.png"></a>
+            <a href="logout.php?act=logout"><img src="../buttons/button_19.png"></a>
             </div>
       </body>
 </html>
